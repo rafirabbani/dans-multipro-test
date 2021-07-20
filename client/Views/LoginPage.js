@@ -66,6 +66,7 @@ export default function SignIn() {
                     <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
                 </div>
                 <div className="w-full py-6 z-20">
+                    <label>Find Your Job Here</label>
                     <form method="post" action="#" className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"> 
                         <div className="pb-2 pt-4">
                             <input type="email" name="id" id="id" placeholder="ID" className="block w-full p-4 text-lg rounded-sm bg-black focus:border-red-600 focus:ring-0"
