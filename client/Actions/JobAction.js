@@ -16,6 +16,21 @@ const getAllJobs = () => async (dispatch) => {
     }
 }
 
+const findJobs = (desc) => async (dispatch) => {
+    dispatch ({ type: FIND_JOBS_REQ })
+    const token = `Bearer ${JSON.parse(localStorage.getItem('token')).token}`
+    try {
+        const result = await Axios.get(`/api/jobs/find?desc=${desc}`,{ headers: {
+            Authorization: token
+        }} )
+        dispatch(({ type: FIND_JOBS_SUCCESS, payload: result.data }))
+    }
+    catch (err) {
+        dispatch({ type: FIND_JOBS_FAIL, payload: err.response.data})
+    }
+}
+
 export default {
-    getAllJobs
+    getAllJobs,
+    findJobs
 }

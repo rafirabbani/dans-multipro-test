@@ -9,6 +9,12 @@ const jobReducer = (state = {}, action )  => {
             return { loading: false, jobList: action.payload }
         case GET_ALL_JOBS_FAIL:
             return { loading: false, error: action.payload }
+        case FIND_JOBS_REQ:
+            return { loading: false }
+        case FIND_JOBS_SUCCESS:
+            return { loading: false, findJobs: action.payload }
+        case FIND_JOBS_FAIL:
+            return { loading: false, error: action.payload }
         default:
             return state
     }
