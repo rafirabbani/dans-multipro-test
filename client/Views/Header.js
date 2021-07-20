@@ -3,18 +3,18 @@ import SearchIcon from '@heroicons/react/outline/SearchIcon'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import JobAction from '../Actions/JobAction'
+import AuthAction from '../Actions/AuthAction'
 
 
 export default function Header(props) {
     const [search, setSearch] = useState([])
     const dispatch = useDispatch()
+    const history = useHistory()
 
-    /* const handleLogout = () => {
-        dispatch(AuthActions.signOut()).then(() => {
-            history.push('/login')
-        })
-
-    } */
+    const handleLogout = () => {
+        dispatch(AuthAction.logout())
+        history.push(`/login`)
+    }
 
     const handleSearch = (e) => {
         //console.log(e.target.value)
@@ -47,6 +47,10 @@ export default function Header(props) {
                     </button>
                 </div>
                 <div className='flex justify-end'>
+                    <button className='text-black px-10 py-5 text-lg focus:outline-none hover:text-gray-600' 
+                        onClick={handleLogout}>
+                        Logout
+                    </button>
                 </div>
             </nav>
         </>
