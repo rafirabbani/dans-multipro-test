@@ -32,7 +32,7 @@ const config = {
             },
             {
                 test: /\.css$/i,
-                include: path.join(CURRENT_WORKING_DIR, 'client/assets/'),
+                include: path.join(CURRENT_WORKING_DIR, 'client/Assets/'),
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             }
             
